@@ -9,6 +9,6 @@ def health_check():
 
 @app.post("/callback")
 async def callback(request: Request):
-    body = await request.body()
-    print("Received from LINE:", body)
+    data = await request.body()
+    print("Received webhook:", data)
     return PlainTextResponse("OK")
